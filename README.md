@@ -1,2 +1,2 @@
-# JavaScript-Advanced-
-JavaScript Advanced  
+# JavaScript React-
+JavaScript React  
