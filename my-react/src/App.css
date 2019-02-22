@@ -1,0 +1,133 @@
+#root{
+ 
+  height: auto;
+   margin: auto;
+   width: 40%;
+background-color: #2D2D2D;
+ 
+box-sizing: border-box;
+border-radius: 3%;
+}
+/* Style the form */
+form{
+  margin-top:5px;
+   width: 99%;
+  
+   display:inline-block;
+   margin: 0;
+   padding: 0;
+   border: none;
+   box-sizing: border-box;
+}
+
+.inputtypes{
+ display: flex;
+flex-direction: column;
+}
+.forlabel{
+   padding: 5% 0 5% 0;
+   width: 100%;
+   text-align: center;
+   margin-bottom: 5%;
+   border-bottom: 1px solid #181818;
+   font-size: 1vw;
+}
+.account{
+   margin: 0;
+   font-size: 150%;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: white;
+   position: relative;
+   top: 25%;
+   transform: translateY(-25%);
+   box-sizing: border-box;
+   
+}
+.inputtypes{
+
+   box-sizing: border-box;
+   margin: 8% 5% 0 5%;
+}
+/*Style input types */
+
+input[type=text],input[type=email],input[type=tel],input[type=password]{
+   padding: 1.5% 55% 1.5% 10%;
+   outline: none;
+   border-radius: 30px;
+   width: 35%;
+   background-color: #D9D9D9;
+   margin-bottom:  3%;
+    
+
+}
+input[type=text]{
+   outline: none;
+ 
+   background-position:  8px 3px;
+   background-repeat: no-repeat;
+   background-size: 5%;
+   font-size: 1vw;
+} 
+input[type=tel]{
+   outline: none;
+ 
+   background-position:   8px 3px;
+   background-repeat: no-repeat;
+   background-size: 5%; 
+   font-size: 1vw;
+} 
+ 
+ 
+input[type=email]{
+   outline: none;
+  
+   background-position:  8px 3px;
+   background-repeat: no-repeat;
+   background-size: 5%;
+   font-size: 1vw;
+} 
+input[type=password]{
+   outline: none;
+ 
+   background-position:  8px 3px;
+   background-repeat: no-repeat;
+   background-size: 5%;
+   font-size: 1vw;
+} 
+.typecheckbox{
+   outline: none;
+   box-sizing: border-box;
+   margin: 0 5% 2% 5%;
+   color: #D9D9D9;
+   font-family: Arial;
+   font-size: 80%;
+   font-size: 1vw;
+}
+span{
+  color: #8F9318;
+}
+.buttonacc{
+   box-sizing: border-box;
+   width: 100%;
+   display: inline-block;
+  
+}
+ 
+button{
+   outline: none;
+   display: inline-block;  
+    width: 45%;
+    position: relative;
+    left: 45%;
+    padding: 2%;
+    font-family: Arial;
+    font-size: 100%;
+    color: white;
+    background-color: #878B1A;
+    border-radius: 15px;
+    border: none;
+    margin-top: 1%; 
+    box-sizing: border-box;
+    font-size: 1.5vw;
+    margin-bottom: 5%;
+}
