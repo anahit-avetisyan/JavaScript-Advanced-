@@ -31,7 +31,7 @@ class SecondSection extends Component{
                       explorer of the truth, the master-builder of human happiness. No one 
                       rejects, dislikes, or avoids pleasure itself.</p>
             </div>
-            <div class="item">
+            <div className="item">
                 <div>
                 <img src = {Knowledgehat}/>
                     <hr/>
