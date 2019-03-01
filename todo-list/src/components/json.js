@@ -1,6 +1,6 @@
 export default [
     {
-        "Game number":1,
+        "GameNumber":1,
         "Status":"started",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -11,7 +11,7 @@ export default [
 
     },
     {
-        "Game number":2,
+        "GameNumber":2,
         "Status":"started",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -22,7 +22,7 @@ export default [
 
     },
     {
-        "Game number":3,
+        "GameNumber":3,
         "Status":"started",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -33,7 +33,7 @@ export default [
 
     },
     {
-        "Game number":4,
+        "GameNumber":4,
         "Status":"started",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -44,7 +44,7 @@ export default [
 
     },
     {
-        "Game number":5,
+        "GameNumber":5,
         "Status":"started",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -55,7 +55,7 @@ export default [
 
     },
     {
-        "Game number":6,
+        "GameNumber":6,
         "Status":"Available",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -66,7 +66,7 @@ export default [
 
     },
     {
-        "Game number":7,
+        "GameNumber":7,
         "Status":"Available",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -77,7 +77,7 @@ export default [
 
     },
     {
-        "Game number":8,
+        "GameNumber":8,
         "Status":"Available",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -88,7 +88,7 @@ export default [
 
     },
     {
-        "Game number":9,
+        "GameNumber":9,
         "Status":"Available",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -99,7 +99,7 @@ export default [
 
     },
     {
-        "Game number":10,
+        "GameNumber":10,
         "Status":"Available",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -110,7 +110,7 @@ export default [
 
     },
     {
-        "Game number":11,
+        "GameNumber":11,
         "Status":"Busy",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -121,7 +121,7 @@ export default [
 
     },
     {
-        "Game number":11,
+        "GameNumber":11,
         "Status":"Busy",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -132,7 +132,7 @@ export default [
 
     },
     {
-        "Game number":12,
+        "GameNumber":12,
         "Status":"Busy",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -143,7 +143,7 @@ export default [
 
     },
     {
-        "Game number":13,
+        "GameNumber":13,
         "Status":"Busy",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -154,7 +154,7 @@ export default [
 
     },
     {
-        "Game number":14,
+        "GameNumber":14,
         "Status":"Busy",
         "Player":"chinga5555",
         "Player2":"chinga123",
@@ -165,7 +165,7 @@ export default [
 
     },
     {
-        "Game number":15,
+        "GameNumber":15,
         "Status":"Busy",
         "Player":"chinga5555",
         "Player2":"chinga123",
