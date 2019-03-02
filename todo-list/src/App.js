@@ -1,62 +1,65 @@
 import React, { Component } from 'react';
-import List from './components/main';
-import Footer from './components/footer';
-import data from './components/json';
+// import List from './components/main';
+// import Footer from './components/footer';
+// import data from './components/json';
+import Cubic from './components/squeir'
 
 class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data:[]
-    }
-  }
-  myFunction = () =>{
-   fetch ("http://rest.learncode.academy/api/learncode/friends", {
-     method: "POST",
-     headers: {
-    "Content-Type": "application/json",
-},
-  body: JSON.stringify(data)
-})
-.then(response => response.json())  
-.then((data =>{
-  this.setState({
-    data: [data]})}))
-}
-  render() {
+   
+//     state = {
+//       data:[]
+//     }
   
+//   myFunctionOne = () =>{
+//    fetch ("http://rest.learncode.academy/api/learncode/friends", {
+//      method: "POST",
+//      headers: {
+//     "Content-Type": "application/json",
+// },
+//   body: JSON.stringify(data)
+// })
+// .then(response => response.json())  
+// .then((data =>{
+//   this.setState({
+//     data: [data]})}))
+// }
+
+  render() {
+  // this.myFunctionOne()
     return (
-      
-     
-      <React.Fragment>
-       <List />
-       <div className="App">
-       {
-          this.state.data.map((dynamicData, Key) => {
-            let keys = Object.keys(dynamicData);
-            // let d = dynamicData;
-            console.log(keys)
-            return keys.map(data => {
-              return (
-                <div>
-                  <div key={keys}>{dynamicData[data].GameNumber}</div>
-                  <div key={keys}>{dynamicData[data].Status}</div>
-                  <div key={keys}>{dynamicData[data].Player}</div>
-                  <div key={keys}>{dynamicData[data].Player2}</div>
-                  <div key={keys}>{dynamicData[data].Round}</div>
-                  <div key={keys}>{dynamicData[data].Amount}</div>
-                  <div key={keys}>{dynamicData[data].Time}</div>
-                  <div key={keys}>{dynamicData[data].Action}</div>
-                </div>
-              );
-            });
-          })
-          
-        }
+      <div className="App">
+      <Cubic/>
       </div>
-      <Footer/>
-      <button onClick={this.myFunction} >Reload</button>
-      </React.Fragment>
+     
+      // <React.Fragment>
+      //  <List />
+      //  <div className="App">
+      //  {
+      //     this.state.data.map((dynamicData, Key) => {
+      //       let keys = Object.keys(dynamicData);
+      //       // let d = dynamicData;
+      //       console.log(keys)
+      //       return keys.map((index, data) => {
+      //         return (
+      //           <div key={index}>
+      //             <div >{dynamicData[data].GameNumber}</div>
+      //             <div >{dynamicData[data].Status}</div>
+      //             <div >{dynamicData[data].Player}</div>
+      //             <div >{dynamicData[data].Player2}</div>
+      //             <div>{dynamicData[data].Round}</div>
+      //             <div >{dynamicData[data].Amount}</div>
+      //             <div>{dynamicData[data].Time}</div>
+      //             <div >{dynamicData[data].Action}</div>
+      //           </div>
+      //         );
+      //       });
+      //     })
+          
+      //   }
+      // </div>
+      // <Footer/>
+
+      // </React.Fragment>
     );
   }
 }
