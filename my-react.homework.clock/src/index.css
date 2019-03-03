@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.divForImg{
+  width: 100%;
+  height: 404;
+  margin: 15px;
+ 
+ 
+}
+img{
+  height: 43vw;
+  width:43vw ;
+}
+ 
+.divForPointer {
+  position: absolute;
+  top: 19vw;
+  left: 24vw;
+  height: 11vw;
+  width: 0.3vw;
+ 
+  background-color:black;
+}
