@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import List from './components/main';
-import Footer from './components/footer';
+// import Footer from './components/footer';
 import data from './components/json';
 
 class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data:[]
+    state = {
+      data:[],
+      checked: true,
     }
-  }
-  myFunction = () =>{
+    
+
+  myFunctionOne = () =>{
    fetch ("http://rest.learncode.academy/api/learncode/friends", {
      method: "POST",
      headers: {
@@ -23,11 +23,47 @@ class App extends Component {
   this.setState({
     data: [data]})}))
 }
-  render() {
+handleCheck = () => {
+    this.setState({checked: !this.state.checked});
+  };
+  handleCheck1= () => {
+    this.setState({checked: !this.state.checked});
+  };
+   
+myFunction=()=>{
+  if(!this.state.checked)
+  {this.state.data.map((dynamicData,Key)=>{
+    let keys = Object.keys(dynamicData);
+    keys.map((data) => {
+      if(dynamicData[data].Status=="Busy" ){
+     delete dynamicData[data]
+      }
+
+    });
+  });
+}
+}
+myFunction2= () => {
+  if(!this.state.checked)
+  {this.state.data.map((dynamicData,Key)=>{
+    let keys = Object.keys(dynamicData);
+    keys.map((data) => {
+      if(dynamicData[data].Status=="Available" ){
+     delete dynamicData[data]
+      }
+
+    });
+  });
+}
+}
+
   
+  render() { 
+  this.myFunction()
+  this.myFunction2()
+  this.myFunctionOne()
     return (
-      
-     
+   
       <React.Fragment>
        <List />
        <div className="App">
@@ -35,27 +71,30 @@ class App extends Component {
           this.state.data.map((dynamicData, Key) => {
             let keys = Object.keys(dynamicData);
             // let d = dynamicData;
-            console.log(keys)
-            return keys.map(data => {
+            return keys.map((index,data) => {
               return (
-                <div>
-                  <div key={keys}>{dynamicData[data].GameNumber}</div>
-                  <div key={keys}>{dynamicData[data].Status}</div>
-                  <div key={keys}>{dynamicData[data].Player}</div>
-                  <div key={keys}>{dynamicData[data].Player2}</div>
-                  <div key={keys}>{dynamicData[data].Round}</div>
-                  <div key={keys}>{dynamicData[data].Amount}</div>
-                  <div key={keys}>{dynamicData[data].Time}</div>
-                  <div key={keys}>{dynamicData[data].Action}</div>
+                <div key={index}>
+                  <div>{dynamicData[data].GameNumber}</div>
+                  <div>{dynamicData[data].Status}</div>
+                  <div>{dynamicData[data].Player}</div>
+                  <div>{dynamicData[data].Player2}</div>
+                  <div>{dynamicData[data].Round}</div>
+                  <div>{dynamicData[data].Amount}</div>
+                  <div>{dynamicData[data].Time}</div>
+                  <div>{dynamicData[data].Action}</div>
                 </div>
               );
             });
           })
           
         }
-      </div>
-      <Footer/>
-      <button onClick={this.myFunction} >Reload</button>
+      </div><form>
+            <input  onChange={this.handleCheck}  defaultChecked={this.state.checked} type="checkbox"/><span>Busy</span> 
+            <input onChange={this.handleCheck1} defaultChecked={this.state.checked} onClick={this.handleClick}  type="checkbox"/><span>Available </span>
+            <input onChange={this.handleCheck2} defaultChecked={this.state.checked}  type="checkbox"/><span>Started </span> 
+            <button  type = "button">Reload</button>
+             </form>
+      {/* <Footer/> */}
       </React.Fragment>
     );
   }

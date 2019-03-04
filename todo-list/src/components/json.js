@@ -109,17 +109,7 @@ export default [
         "Action":"Play Now"
 
     },
-    {
-        "GameNumber":11,
-        "Status":"Busy",
-        "Player":"chinga5555",
-        "Player2":"chinga123",
-        "Round":"Till 15",
-        "Amount":"32C",
-        "Time":"30",
-        "Action":"Play Now"
 
-    },
     {
         "GameNumber":11,
         "Status":"Busy",

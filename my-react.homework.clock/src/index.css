@@ -21,16 +21,21 @@ code {
  
 }
 img{
-  height: 43vw;
-  width:43vw ;
+  height: 35vw;
+  width:35vw ;
 }
  
 .divForPointer {
-  position: absolute;
-  top: 19vw;
-  left: 24vw;
-  height: 11vw;
-  width: 0.3vw;
- 
-  background-color:black;
+  position:fixed;
+  top: 13vw;
+  left: 19vw;
+  height: 12vw;
+  width: 0.6vw;
+  transition-duration: 3s;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background:linear-gradient(to bottom,#800000  0%, #ffffff 98%);
+}
+input{
+  outline: none;
 }

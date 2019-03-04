@@ -1,21 +1,7 @@
 import React,{Component} from 'react';
 import Clock from '../images/clo.png';
 class Header extends Component {
-    state={
-       value:[],
-        clock:""
-    }
-    handleChange=()=>{
-        this.setState({
-         
-        })
-        if(this.state.value===10){
-            console.log("aaaaaaa")
-        }
-        }
-        
     
-   
     render(){
 
         return (
