@@ -40,3 +40,9 @@ img{
 input{
   outline: none;
 }
+.colorGreen{
+  color: green;
+}
+.colorYellow{
+  color:yellow;
+}
