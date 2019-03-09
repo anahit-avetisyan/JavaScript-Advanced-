@@ -1,4 +1,4 @@
- /* * {
+ * {
      margin: 0;
      padding: 0;
  }
@@ -38,8 +38,8 @@
     width:10%;
  
     padding: 5px;
-} */
-.cubic {
+}
+/* .cubic {
     height: 80px;
     width: 80px;
     background-color: aqua;
@@ -52,5 +52,5 @@
     from   {  left:0px}
     to  {  left:100%}
     
-  }
+  } */
   
