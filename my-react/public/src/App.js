@@ -9,7 +9,7 @@ class App extends Component {
         <form id="form">
      <React.Fragment>
             <div className="divForSign">
-                <button id="signUpp" onClick={this.signUp}>Sign Up</button>
+                    <button id="signUpp" onClick={this.signUp}>Sign Up</button>
                 <button id="signInn" onClick={this.signIn}>Sign In</button>
             </div>
             <div id="signUp">
