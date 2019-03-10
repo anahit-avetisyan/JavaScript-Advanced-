@@ -9,7 +9,8 @@ class Main extends  Component  {
         email:"",
         password:"",
         repassword:"",
-        allfields:""
+        allfields:"",
+        repasswordIn:"",
     }
     // signIn=()=>{
     // if({display:this.state.showStore="none"}){
@@ -30,7 +31,6 @@ class Main extends  Component  {
     // this.state.showsignIn=false;
     //     }
     // }
-     
     signIn=()=>{
         this.SignUp.style.display="none"
         this.SignIn.style.display="flex"  
@@ -58,9 +58,35 @@ class Main extends  Component  {
         } 
         else{
             this.setState({nameIn:""})
-        }
-       
+        } 
     }
+    passwordChangeIn = () => {
+        let regpass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;   
+        if(regpass.test(this.passwordIn.value)==false){
+            this.setState({passwordIn:"Please input correct format"})
+        }
+            else{
+                this.setState({passwordIn:""})
+            } 
+    }
+    
+    myFunctionOne=()=>{
+        if(this.nameIn.value&&this.passwordIn.value){
+            let  data1={
+                    name:this.nameIn.value,
+                    password:this.passwordIn.value,    
+                         }
+    // console.log(data1)
+        fetch("http://rest.learncode.academy/api/learncode/friends", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data1)
+        })
+
+    } 
+    this.nameIn.value="";
+    this.passwordIn.value="";
+} 
     nameChange=()=>{
         let regexpName =/[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,6}$/;
         if(regexpName.test(this.name.value)==false){
@@ -95,9 +121,7 @@ class Main extends  Component  {
         }
             else{
                 this.setState({password:""})
-            }
-            
-        
+            }   
     }
     repasswordChange=()=>{
         if(this.password.value!==this.repassword.value){
@@ -107,15 +131,14 @@ class Main extends  Component  {
             this.setState({repassword:""})
         }
     }
-
     myFunction=()=>{
         if(this.name.value&&this.userName.value&&this.email.value&&this.password.value){
-    let  data={
-        name:this.name.value,
-        userName:this.userName.value,
-        email:this.email.value,
-        password:this.password.value,    
-    }
+            let  data={
+                name:this.name.value,
+                userName:this.userName.value,
+                email:this.email.value,
+                password:this.password.value,    
+            }
     console.log(data)
         fetch("http://rest.learncode.academy/api/learncode/friends", {
             method: "POST",
@@ -128,50 +151,50 @@ class Main extends  Component  {
     else{
         alert("Please fill all fileds")
         // this.setState({allfields:"Please fill all fileds"})
-    }
-    
+    } 
+     this.name.value=""
+     this.userName.value=""
+     this.email.value=""
+     this.password.value=""
+     this.repassword.value=""   
 }    
- 
     render(){
         return(
 <React.Fragment>
-<div className="divForSign">
-                    <div id="signUpp" onClick={this.signUp} ref={el=>this.signupstyle=el}>Sign Up</div>
-                <div id="signInn" onClick={this.signIn} ref={el=>this.signinstyle=el}>Sign In</div>
-            </div>
+        <div className="divForSign">
+            <div id="signUpp" onClick={this.signUp} ref={el=>this.signupstyle=el}>Sign Up</div>
+            <div id="signInn" onClick={this.signIn} ref={el=>this.signinstyle=el}>Sign In</div>
+        </div>
             <div id="signIn" style={{display: this.state.showsignIn ? 'flex' : 'none'}} ref={el=>this.SignIn=el}>
                 <input  onChange={this.nameChangeIn}  type="text" placeholder="User Name" id="loginuserNameOne" ref={input=>this.nameIn=input}/>
-                <p id="pforuser">{this.state.nameIn}</p>
+                <p  >{this.state.nameIn}</p>
                 <input onChange={this.passwordChangeIn}   type="password" placeholder="Password" id="loginPasswordOne" ref={input=>this.passwordIn=input}/>
-                <p id="pforpass">{this.state.passwordIn}</p>
+                <p>{this.state.passwordIn}</p>
             </div>
-            <div id="signUp" style={{display:this.state.showsignUp ? 'none' : 'flex'}} ref={el=>this.SignUp=el}>
-                <p>{this.state.allfields}</p>
-                <input  onChange={this.nameChange} type="text"   placeholder="Name" id="loginName" ref={input=>this.name=input} />
-                <p>{this.state.name}</p>
-                <input  onChange={this.userNameChange} type="text" placeholder="User Name" id="loginuserName" ref={input=>this.userName=input}/>
-                <p>{this.state.userName}</p>
-                <input onChange={this.mailChange} type="mail" placeholder="Your Email" id="loginEmail" ref={input=>this.email=input}/>
-                <p>{this.state.email}</p>
-                <input  onChange={this.passwordChange} type="password" placeholder="Password" id="loginPassword" ref={input=>this.password=input}/>
-                <p>{this.state.password}</p>
-                <input onChange={this.repasswordChange} type="password" placeholder="Repeat your password" id= "RepeatPassword" ref={input=>this.repassword=input}/>
-                <p>{this.state.repassword}</p>
-            </div>
-
-            <div id="divForCheckbox" style={{display:this.state.chekbox ? "none":"block"}} ref={checkbox=>this.checkbox=checkbox} >
-                <input id="typeCheckbox" type="checkbox"/>
-                <label for="typeCheckbox" className="labelForCheckbox" >
-                    I agree all statements in <a href="#">Terms of service</a>
-                </label>
-            </div>
+                <div id="signUp" style={{display:this.state.showsignUp ? 'none' : 'flex'}} ref={el=>this.SignUp=el}>
+                    <p>{this.state.allfields}</p>
+                    <input  onChange={this.nameChange} type="text"   placeholder="Name" id="loginName" ref={input=>this.name=input} />
+                    <p>{this.state.name}</p>
+                    <input  onChange={this.userNameChange} type="text" placeholder="User Name" id="loginuserName" ref={input=>this.userName=input}/>
+                    <p>{this.state.userName}</p>
+                    <input onChange={this.mailChange} type="mail" placeholder="Your Email" id="loginEmail" ref={input=>this.email=input}/>
+                    <p>{this.state.email}</p>
+                    <input  onChange={this.passwordChange} type="password" placeholder="Password" id="loginPassword" ref={input=>this.password=input}/>
+                    <p>{this.state.password}</p>
+                    <input onChange={this.repasswordChange} type="password" placeholder="Repeat your password" id= "RepeatPassword" ref={input=>this.repassword=input}/>
+                    <p>{this.state.repassword}</p>
+                </div>
+                    <div id="divForCheckbox" style={{display:this.state.chekbox ? "none":"block"}} ref={checkbox=>this.checkbox=checkbox} >
+                        <input id="typeCheckbox" type="checkbox"/>
+                        <label for="typeCheckbox" className="labelForCheckbox" >
+                            I agree all statements in <a href="#">Terms of service</a>
+                        </label>
+                    </div>
             <button ref={button=>this.button1=button}style={{display:this.state.buttonOne ? "none":"block"}} id="buttonOne" type="button" onClick={this.myFunction}>CREAT ACCOUNT</button>
             <button ref={button=>this.button2=button} style={{display: this.state.showStore ? 'block' : 'none' }} id="buttonTwo" type="button" onClick={this.myFunctionOne}>LOG IN</button>
             <p ref={checkbox=>this.checkbox1=checkbox} id="footer">Have already an account? <b><a href="#" target = "_blank"  > Login here </a> </b></p>
-           
 </React.Fragment>
         )
-
     }
 }
 export default Main;

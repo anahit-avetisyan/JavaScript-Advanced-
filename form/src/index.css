@@ -144,14 +144,7 @@ li {
 } 
  
 @media screen and (max-width: 990px){
-  #span{
-      /* display: none; */
-      color:red;
-      font-size: 80%;
-      padding: 0;
-      margin:0;
-      text-align: center;
-  } 
+  
   .labelForCheckbox {
       font-size: 70%;
   }
@@ -202,9 +195,7 @@ li {
   border-bottom: #71ead7;   
   cursor: pointer;
 }
-#buttonTwo {
-  /* display: none; */
-}
+ 
 p{
   text-align: center;
   color: red;
