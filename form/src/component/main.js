@@ -4,10 +4,62 @@ import React, {Component} from 'react';
 class Main extends  Component  {
     state={
         name:"",
+        nameIn: "",
         userName:"",
         email:"",
         password:"",
         repassword:"",
+        allfields:""
+    }
+    // signIn=()=>{
+    // if({display:this.state.showStore="none"}){
+    // this.setState({showStore:"flex"}) 
+    // this.state.showStore=false
+    // this.state.showsignUp=true;
+    // this.state.buttonOne=true;
+    // this.state.chekbox = true;
+    // this.state.showsignIn=true;
+    //     } 
+    // }
+    // signUp=()=>{
+    // if({display:this.state.showStore="block"}){
+    // this.setState({showStore:"none"}) 
+    // this.state.showsignUp=false;
+    // this.state.buttonOne=false;
+    // this.state.chekbox = false;
+    // this.state.showsignIn=false;
+    //     }
+    // }
+     
+    signIn=()=>{
+        this.SignUp.style.display="none"
+        this.SignIn.style.display="flex"  
+        this.button1.style.display="none"
+        this.button2.style.display="block"
+        this.checkbox.style.display='none'
+        this.checkbox1.style.display='none'
+        this.signupstyle.style.borderBottom="none"
+        this.signinstyle.style.borderBottom="2px solid #212F41"
+    }
+    signUp=()=>{
+        this.SignUp.style.display="flex"
+        this.SignIn.style.display="none" 
+        this.button1.style.display="block"
+        this.button2.style.display="none" 
+        this.checkbox.style.display='flex'
+        this.checkbox1.style.display='block'
+        this.signupstyle.style.borderBottom="2px solid #212F41"
+        this.signinstyle.style.borderBottom="none"
+    }
+    nameChangeIn=()=>{
+        let regexpName =/[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,6}$/;
+        if(regexpName.test(this.nameIn.value)==false){
+            this.setState({nameIn:"Please Input Right Format"})
+        } 
+        else{
+            this.setState({nameIn:""})
+        }
+       
     }
     nameChange=()=>{
         let regexpName =/[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,6}$/;
@@ -57,23 +109,44 @@ class Main extends  Component  {
     }
 
     myFunction=()=>{
+        if(this.name.value&&this.userName.value&&this.email.value&&this.password.value){
+    let  data={
+        name:this.name.value,
+        userName:this.userName.value,
+        email:this.email.value,
+        password:this.password.value,    
+    }
+    console.log(data)
         fetch("http://rest.learncode.academy/api/learncode/friends", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify()
+            body: JSON.stringify(data)
         })
 
     }
-          
+
+    else{
+        alert("Please fill all fileds")
+        // this.setState({allfields:"Please fill all fileds"})
+    }
+    
+}    
+ 
     render(){
         return(
 <React.Fragment>
 <div className="divForSign">
-                    <div id="signUpp" onClick={this.signUp}>Sign Up</div>
-                <div id="signInn" onClick={this.signIn}>Sign In</div>
+                    <div id="signUpp" onClick={this.signUp} ref={el=>this.signupstyle=el}>Sign Up</div>
+                <div id="signInn" onClick={this.signIn} ref={el=>this.signinstyle=el}>Sign In</div>
             </div>
-            <div id="signUp">
-                <span id="allelem"></span>
+            <div id="signIn" style={{display: this.state.showsignIn ? 'flex' : 'none'}} ref={el=>this.SignIn=el}>
+                <input  onChange={this.nameChangeIn}  type="text" placeholder="User Name" id="loginuserNameOne" ref={input=>this.nameIn=input}/>
+                <p id="pforuser">{this.state.nameIn}</p>
+                <input onChange={this.passwordChangeIn}   type="password" placeholder="Password" id="loginPasswordOne" ref={input=>this.passwordIn=input}/>
+                <p id="pforpass">{this.state.passwordIn}</p>
+            </div>
+            <div id="signUp" style={{display:this.state.showsignUp ? 'none' : 'flex'}} ref={el=>this.SignUp=el}>
+                <p>{this.state.allfields}</p>
                 <input  onChange={this.nameChange} type="text"   placeholder="Name" id="loginName" ref={input=>this.name=input} />
                 <p>{this.state.name}</p>
                 <input  onChange={this.userNameChange} type="text" placeholder="User Name" id="loginuserName" ref={input=>this.userName=input}/>
@@ -85,15 +158,16 @@ class Main extends  Component  {
                 <input onChange={this.repasswordChange} type="password" placeholder="Repeat your password" id= "RepeatPassword" ref={input=>this.repassword=input}/>
                 <p>{this.state.repassword}</p>
             </div>
-            <div id="divForCheckbox">
+
+            <div id="divForCheckbox" style={{display:this.state.chekbox ? "none":"block"}} ref={checkbox=>this.checkbox=checkbox} >
                 <input id="typeCheckbox" type="checkbox"/>
-                <label for="typeCheckbox" className="labelForCheckbox">
+                <label for="typeCheckbox" className="labelForCheckbox" >
                     I agree all statements in <a href="#">Terms of service</a>
                 </label>
             </div>
-            <button id="buttonOne" type="button" onClick={this.myFunction}>CREAT ACCOUNT</button>
-            <button id="buttonTwo" type="button" onClick={this.myFunctionOne}>LOG IN</button>
-            <p id="footer">Have already an account? <b><a href="#" target = "_blank"  > Login here </a> </b></p>
+            <button ref={button=>this.button1=button}style={{display:this.state.buttonOne ? "none":"block"}} id="buttonOne" type="button" onClick={this.myFunction}>CREAT ACCOUNT</button>
+            <button ref={button=>this.button2=button} style={{display: this.state.showStore ? 'block' : 'none' }} id="buttonTwo" type="button" onClick={this.myFunctionOne}>LOG IN</button>
+            <p ref={checkbox=>this.checkbox1=checkbox} id="footer">Have already an account? <b><a href="#" target = "_blank"  > Login here </a> </b></p>
            
 </React.Fragment>
         )
