@@ -7,10 +7,13 @@ class App extends Component {
     state = {
       data:[],
       checked: true,
+      checked1: true,
+      checked2: true,
     }
     
 
-  myFunctionOne = () =>{
+  
+    componentDidMount(){
    fetch ("http://rest.learncode.academy/api/learncode/friends", {
      method: "POST",
      headers: {
@@ -25,7 +28,7 @@ class App extends Component {
 }
 handleCheck = () => {
     this.setState({checked: !this.state.checked});
-    if(!this.state.checked)
+    if(this.state.checked)
   {this.state.data.map((dynamicData,Key)=>{
     let keys = Object.keys(dynamicData);
     keys.map((data) => {
@@ -36,10 +39,22 @@ handleCheck = () => {
     });
   });
 }
-  };
+else{
+      
+      }
+  
+  }
+    // keys.map((data) => {
+    //   if(dynamicData[data].Status=="Busy" ){
+    //  dynamicData.push(dynamicData)
+    
+    //   }
+
+    // });
+   
   handleCheck1= () => {
-    this.setState({checked: !this.state.checked});
-    if(!this.state.checked)
+    this.setState({checked1: !this.state.checked1});
+    if(this.state.checked1)
   {this.state.data.map((dynamicData,Key)=>{
     let keys = Object.keys(dynamicData);
     keys.map((data) => {
@@ -51,7 +66,20 @@ handleCheck = () => {
   });
 }
   };
-   
+  handleCheck2= () => {
+    this.setState({checked2: !this.state.checked2});
+    if(this.state.checked2)
+  {this.state.data.map((dynamicData,Key)=>{
+    let keys = Object.keys(dynamicData);
+    keys.map((data) => {
+      if(dynamicData[data].Status=="started" ){
+     delete dynamicData[data]
+      }
+
+    });
+  });
+}
+  };
 // myFunction=()=>{
 //   if(!this.state.checked)
 //   {this.state.data.map((dynamicData,Key)=>{
@@ -83,7 +111,7 @@ handleCheck = () => {
   render() { 
   // this.myFunction()
   // this.myFunction2()
-  this.myFunctionOne()
+   
     return (
    
       <React.Fragment>
@@ -112,8 +140,8 @@ handleCheck = () => {
         }
       </div><form>
             <input  onChange={this.handleCheck}  defaultChecked={this.state.checked} type="checkbox"/><span>Busy</span> 
-            <input onChange={this.handleCheck1} defaultChecked={this.state.checked} onClick={this.handleClick}  type="checkbox"/><span>Available </span>
-            <input onChange={this.handleCheck2} defaultChecked={this.state.checked}  type="checkbox"/><span>Started </span> 
+            <input onChange={this.handleCheck1} defaultChecked={this.state.checked1} onClick={this.handleClick}  type="checkbox"/><span>Available </span>
+            <input onChange={this.handleCheck2} defaultChecked={this.state.checked2}  type="checkbox"/><span>Started </span> 
             <button  type = "button">Reload</button>
              </form>
       {/* <Footer/> */}
