@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 // import Clock from './images/clo.png';
 // import Header from './component/header'
 //  import Main from './component/main'
-import Clock from './component/showClock'
+// import Clock from './component/showClock'
+import Increment from './component/showIncrement'
 class App extends Component {
 state ={
   clicked:false
@@ -10,6 +11,10 @@ state ={
 deleteComponent=()=>{
   this.setState({clicked:true})
 }
+returnComponent=()=>{
+  this.setState({clicked:false})
+}
+
 //   state = { text:" ",
 //   number:0,
 // class:"Green"
@@ -57,8 +62,10 @@ deleteComponent=()=>{
   
     return (
       <div className="App">
-       {this.state.clicked? null:<Clock/>}
-      <button onClick={this.deleteComponent}> click</button>
+       {/* {this.state.clicked? null:<Clock/>} */}
+      <button onClick={this.deleteComponent}> click and delete</button>
+      <button onClick={this.returnComponent}> click and return</button>
+      {this.state.clicked? null:<Increment/>}
       {/* <input type="text" ref={el => this.text=el}  onChange={this.changeText }   name = "text" />
       <p>{this.state.text}</p>
       <input type="number" ref={el => this.number=el} onChange={this.changeNumber }    name = "number" />

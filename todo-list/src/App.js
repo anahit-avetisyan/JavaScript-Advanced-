@@ -25,13 +25,7 @@ class App extends Component {
 }
 handleCheck = () => {
     this.setState({checked: !this.state.checked});
-  };
-  handleCheck1= () => {
-    this.setState({checked: !this.state.checked});
-  };
-   
-myFunction=()=>{
-  if(!this.state.checked)
+    if(!this.state.checked)
   {this.state.data.map((dynamicData,Key)=>{
     let keys = Object.keys(dynamicData);
     keys.map((data) => {
@@ -42,9 +36,10 @@ myFunction=()=>{
     });
   });
 }
-}
-myFunction2= () => {
-  if(!this.state.checked)
+  };
+  handleCheck1= () => {
+    this.setState({checked: !this.state.checked});
+    if(!this.state.checked)
   {this.state.data.map((dynamicData,Key)=>{
     let keys = Object.keys(dynamicData);
     keys.map((data) => {
@@ -55,12 +50,39 @@ myFunction2= () => {
     });
   });
 }
-}
+  };
+   
+// myFunction=()=>{
+//   if(!this.state.checked)
+//   {this.state.data.map((dynamicData,Key)=>{
+//     let keys = Object.keys(dynamicData);
+//     keys.map((data) => {
+//       if(dynamicData[data].Status=="Busy" ){
+//      delete dynamicData[data]
+//       }
+
+//     });
+//   });
+// }
+// }
+// myFunction2= () => {
+//   if(!this.state.checked)
+//   {this.state.data.map((dynamicData,Key)=>{
+//     let keys = Object.keys(dynamicData);
+//     keys.map((data) => {
+//       if(dynamicData[data].Status=="Available" ){
+//      delete dynamicData[data]
+//       }
+
+//     });
+//   });
+// }
+// }
 
   
   render() { 
-  this.myFunction()
-  this.myFunction2()
+  // this.myFunction()
+  // this.myFunction2()
   this.myFunctionOne()
     return (
    
