@@ -4,15 +4,23 @@ import React, { Component } from 'react';
 //  import Main from './component/main'
 // import Clock from './component/showClock'
 import Increment from './component/showIncrement'
+import Popup from './component/popup'
 class App extends Component {
 state ={
-  clicked:false
+  clicked:false,
+  click:true,
+  click1:true,
 }
 deleteComponent=()=>{
   this.setState({clicked:true})
+  this.setState({click:false})
+  this.setState({click1:true})
+   
 }
 returnComponent=()=>{
   this.setState({clicked:false})
+  this.setState({click:true})
+  this.setState({click1:false})
 }
 
 //   state = { text:" ",
@@ -66,6 +74,8 @@ returnComponent=()=>{
       <button onClick={this.deleteComponent}> click and delete</button>
       <button onClick={this.returnComponent}> click and return</button>
       {this.state.clicked? null:<Increment/>}
+      {this.state.click? null:<Popup text=" You have deleted your component"/>}
+      {this.state.click1? null:<Popup text=" You return your component"/>}
       {/* <input type="text" ref={el => this.text=el}  onChange={this.changeText }   name = "text" />
       <p>{this.state.text}</p>
       <input type="number" ref={el => this.number=el} onChange={this.changeNumber }    name = "number" />

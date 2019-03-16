@@ -13,7 +13,7 @@ class Clock extends Component{
         })
     }
     componentDidUpdate(previousProps,previousState){
-       if(previousState.date!==this.state.date){
+       if(previousState.date!=this.state.date){
            console.log("jamy poxvec")
        }
     }
