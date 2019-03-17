@@ -1,0 +1,141 @@
+ 
+*{
+  font-family: Arial;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body, #root,.popup,.App{
+  height: 100%;
+  width: 100%;
+ 
+}
+.popup{
+  position: absolute;
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 3s;
+  
+}
+.popup_inner{
+  position: absolute;
+  height:fit-content;
+  min-height: 40vw;
+  width:40vw ;
+  background-color: rgba(49, 96, 167, 0.26);
+}
+body {
+  background-image: url("http://wallpapersfan.ru/wp-content/uploads/2016/12/skachat-besplatno-oboi-zvezdnoe-nebo-dlya-rabochego-stola.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+.divForMainButtons{
+  display: flex;
+  justify-content: flex-end;
+}
+.divForMainButtons button{
+  font-size: 1vw;
+  padding:1vw;
+  width: 10vw;
+  margin: 1vw;
+  outline: none;
+  border:none;
+  border-radius: 1vw;
+  background: linear-gradient(to right, #7D9DB8 0%, #10192A 100%);
+}
+.FaTimes{
+  color: grey;
+  position: fixed;
+  right: 30vw;
+  margin:1vw
+  
+}
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 2vw
+}
+#signIn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* display: none; */
+}
+#DivForSignIn{
+  color: #F0F0F0;
+  text-align: center;
+  padding: 0.3vw;
+  transform: translateY(50%);
+}
+
+#signUp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#DivForSignUp{
+  margin-top: 2vw
+}
+form {
+  border-radius: 0.4vw;
+  min-width: 30vw;
+  width: 36vw;
+  max-width: 50vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+ 
+input, button, #buttonTwo {
+  padding: 1vw;
+  margin:1vw 5vw;
+  border-radius: 0.5vw;
+  border: none;
+  background-color:  rgba(255, 255, 255, 0.938);
+  outline: none;
+  font-size: 1vw;
+   
+}
+button {
+  margin: 1vw 5vw;
+  border: none;
+  color: #F0F0F0;
+  font-weight: bold;
+  background: linear-gradient(to right, #a1abe9 0%, #71ead7 100%);
+  border-radius: 1vw;
+  font-size: 1vw;
+  outline: none;
+}
+#divForCheckbox {
+  margin-top: 2vw;
+ 
+}
+#typeCheckbox {
+  margin-right: 0;
+  font-family: Arial;
+  margin-bottom: 1vw;   
+}
+.labelForCheckbox {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1vw;
+  color: white;
+  margin-left: 0.5vw
+}
+#footer {
+  margin: 2vw 0 2vw 0;
+  text-align: center;
+  font-size: 1vw;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+a {
+  color: white;
+}
+p{
+  text-align: center;
+  color: red;
+  font-size: 1vw;
+}
