@@ -1,40 +1,160 @@
+*{
+  font-family: Arial;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body, #root,.popup,.App{
+  height: 100%;
+  width: 100%;
+ 
+}
+%message-shared {
+  display: flex;
+}
+%message-sharedTwo{
+  padding: 1vw;
+  margin:1vw 5vw;
+  border-radius: 0.5vw;
+  border: none;
+  background-color:  rgba(255, 255, 255, 0.938);
+  outline: none;
+  font-size: 1vw;
+}
 
-p{
-  color:red;
-  &:hover{
-    color:blue;
+  
+
+body {
+  background-image: url("http://wallpapersfan.ru/wp-content/uploads/2016/12/skachat-besplatno-oboi-zvezdnoe-nebo-dlya-rabochego-stola.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+.popup{
+  position: absolute;
+  z-index: 500;
+  @extend %message-shared;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+ 
+  
+}
+.popup_inner{
+  position: absolute;
+  height:fit-content;
+  min-height: 40vw;
+  width:35vw ;
+  background-color: rgba(49, 96, 167, 0.26);
+  
+   
+}
+.divForMainButtons{
+  @extend %message-shared;
+  justify-content: flex-end;
+  button{
+    font-size: 1vw;
+  padding:1vw;
+  width: 10vw;
+  margin: 1vw;
+  outline: none;
+  border:none;
+  border-radius: 1vw;
+  background: linear-gradient(to right, #7D9DB8 0%, #10192A 100%);
   }
 }
-.App {
+.FaTimes{
+  color: grey;
+  position: fixed;
+  right: 33vw;
+  margin:1vw 
+}
+#DivForSignUp{
+  margin-top: 2em;
+}
+#signUp {
+      width: 100%;
+      @extend %message-shared;
+      border-radius: 0.4vw;
+      min-width: 30vw;
+      width: 36vw;
+      max-width: 50vw;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      input{
+       @extend %message-sharedTwo  
+      }
+      #buttonOne{
+        margin: 1vw 5vw;
+        padding: 1vw;
+        border: none;
+        color: #F0F0F0;
+        font-weight: bold;
+        background: linear-gradient(to right, #a1abe9 0%, #71ead7 100%);
+        border-radius: 1vw;
+        font-size: 1vw;
+        outline: none;
+        
+      }
+}
+h2 {
+  color: white;
   text-align: center;
+  font-size: 2vw;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+#divForCheckbox {
+  margin-top: 2vw;
+ 
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#typeCheckbox {
+  margin-right: 0;
+  font-family: Arial;
+  margin-bottom: 1vw;   
+}
+.labelForCheckbox {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1vw;
+  color: white;
+  margin-bottom: 0.1vw
+}
+#footer {
+  margin: 2vw 0 2vw 0;
+  text-align: center;
+  font-size: 1vw;
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#DivForSignIn{
+  color: #F0F0F0;
+  text-align: center;
+  padding: 0.3vw;
+  transform: translateY(50%);
+  form{
+    width: 100%;
+    @extend %message-shared;
+  border-radius: 0.4vw;
+  min-width: 30vw;
+  width: 36vw;
+  max-width: 50vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  input{
+    @extend %message-sharedTwo  
+   }
+   
+   
   }
-}
+  #buttonTwo{
+    background: linear-gradient(to right, #a1abe9 0%, #71ead7 100%);
+    @extend %message-sharedTwo  
+   } 
+   a {
+    color: white;
+  }
+  p{
+    text-align: center;
+    color: red;
+    font-size: 1vw;
+  }

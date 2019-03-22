@@ -6,6 +6,23 @@ class SignIn extends Component{
         nameIn: "",
         repasswordIn:"",
     }
+    getSnapshotBeforeUpdate(prevProps,prevState){
+        if(prevState.value !== this.state.nameIn){
+     
+            console.log(prevState.value,this.state.nameIn)
+        }
+        return null
+
+    }
+    componentDidUpdate(prevProps,prevState,snapshot){
+        if(prevState.nameIn!==this.state.nameIn){
+        console.log("Didupdaten e")
+        }
+       
+        // if(snapshot!== null){
+        //     console.log(snapshot,"snapshot")
+        // }
+    }
     nameChangeIn=()=>{
         let regexpName =/[A-Z][a-zA-Z][^#&<>"~;$^%{}?]{1,6}$/;
         if(regexpName.test(this.nameIn.value)===false){
@@ -35,15 +52,18 @@ class SignIn extends Component{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data1)
+            
         })
-
+ 
     } 
-    else{
-        alert("Please fill all fileds Right Format")
-        // this.setState({allfields:"Please fill all fileds"})
-    }
+    // else{
+    //     alert("Please fill all fileds Right Format")
+    //     // this.setState({allfields:"Please fill all fileds"})
+    // }
+  
     this.nameIn.value="";
     this.passwordIn.value="";
+    
 } 
     render(){
 

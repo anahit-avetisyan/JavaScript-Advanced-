@@ -8,12 +8,12 @@ class Cycle extends Component{
     componentDidMount(){
         setInterval(()=>this.setState({value: this.state.value+1}),2000)
     }
-    // shouldComponentUpdate(nextProps,nextState){
-    //      if(nextState.value!==this.state.value){
-    //     return true
-    //      }
-    //      return false
-    // }
+    shouldComponentUpdate(nextProps,nextState){
+         if(nextState.value!==this.state.value){
+        return true
+         }
+         return false
+    }
     getSnapshotBeforeUpdate(prevProps,prevState){
         if(prevState.value !== this.state.value){
      

@@ -6,6 +6,12 @@ class SignIn extends Component{
         nameIn: "",
         repasswordIn:"",
     }
+//     shouldComponentUpdate(nextProps,nextState){
+//         if(nextState.value!==this.state.value){
+//        return true
+//         }
+//         return false
+//    }
     nameChangeIn=()=>{
         let regexpName =/[A-Z][a-zA-Z][^#&<>"~;$^%{}?]{1,6}$/;
         if(regexpName.test(this.nameIn.value)===false){
@@ -30,13 +36,12 @@ class SignIn extends Component{
                     name:this.nameIn.value,
                     password:this.passwordIn.value,    
                          }
-    // console.log(data1)
+ 
         fetch("http://rest.learncode.academy/api/learncode/friends", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data1)
         })
-
     } 
     else{
         alert("Please fill all fileds Right Format")
