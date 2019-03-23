@@ -5,19 +5,27 @@ class SignIn extends Component{
     state={ 
         nameIn: "",
         repasswordIn:"",
-    }
-    getSnapshotBeforeUpdate(prevProps,prevState){
-        if(prevState.value !== this.state.nameIn){
-     
-            console.log(prevState.value,this.state.nameIn)
-        }
-        return null
+        response:{}
 
     }
-    componentDidUpdate(prevProps,prevState,snapshot){
-        if(prevState.nameIn!==this.state.nameIn){
-        console.log("Didupdaten e")
+    shouldComponentUpdate(nextProps,nextState){
+        if( nextState!==this.state.nameIn){
+       return true
         }
+        return false
+   }
+    // getSnapshotBeforeUpdate=(prevProps,prevState)=>{
+    //     if(prevState.nameIn!== this.state.nameIn){
+     
+    //         console.log("Previous value is", prevState.nameIn, "value is" )
+    //     }
+    //     return null
+
+    // }
+     componentDidUpdate=(prevProps,prevState,snapshot)=>{
+//  this.setState({nameIn:this.nameIn.value})
+        console.log("Previous value is", prevState, "next value is",this.nameIn.value)
+     
        
         // if(snapshot!== null){
         //     console.log(snapshot,"snapshot")
@@ -42,29 +50,35 @@ class SignIn extends Component{
             } 
     }
     myFunctionOne=()=>{
-        if(this.nameIn.value&&this.passwordIn.value===true){
-            let  data1={
-                    name:this.nameIn.value,
-                    password:this.passwordIn.value,    
-                         }
+        
+     
+        let  data1={
+            name:this.nameIn.value,
+            password:this.passwordIn.value,    
+                 }
+        // if(this.nameIn.value===true && this.passwordIn.value=== true){
+           
     // console.log(data1)
-        fetch("http://rest.learncode.academy/api/learncode/friends", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(data1)
-            
-        })
- 
-    } 
-    // else{
-    //     alert("Please fill all fileds Right Format")
-    //     // this.setState({allfields:"Please fill all fileds"})
-    // }
-  
-    this.nameIn.value="";
-    this.passwordIn.value="";
-    
+    fetch("http://rest.learncode.academy/api/learncode/friends", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data1)
+    })
+    .then(response => response.json())
+  .then((response) => {
+           console.log("You saved this item", response);
+         })
+
+       
+// } 
+// else{
+//     alert("Please fill all fileds Right Format")
+//     // this.setState({allfields:"Please fill all fileds"})
+// }
+this.nameIn.value="";
+this.passwordIn.value="";
 } 
+
     render(){
 
         return(
