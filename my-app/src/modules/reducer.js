@@ -19,7 +19,7 @@ function counter(state =0, action) {
             return state 
         }
     }
-    function changeSurname(state="Melikyan",action){
+    function changeSurname(state="Hovhannisyan",action){
         switch (action.type) {
             case "Change_Surname":
         return  action.surName + " " + action.name
