@@ -1,7 +1,7 @@
  
 import React,{Component,Fragment} from 'react';
 import {FaTimes} from 'react-icons/fa'
-import Li from './LI'
+ 
  
 class PopUp extends Component{
 state={
