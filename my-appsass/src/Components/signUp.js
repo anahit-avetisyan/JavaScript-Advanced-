@@ -55,7 +55,11 @@ class SignUp extends Component {
         }
     }
     myFunction=()=>{
-        if(this.name.value&&this.userName.value&&this.email.value&&this.password.value===true){
+        let regexpName =/[A-Z][a-zA-Z][^#&<>"~;$^%{}?]{1,6}$/;
+        let regexpUserName= /[A-Z][a-zA-Z]{1,6}$/;
+        let regpass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/; 
+        let mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(regexpName.test(this.name.value)&&regexpUserName.test(this.userName.value)&& mailformat.test(this.email.value)&& regpass.test(this.password.value)===true){
             let  data={
                 name:this.name.value,
                 userName:this.userName.value,
