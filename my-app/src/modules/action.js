@@ -1,27 +1,9 @@
- export function changeText(text){
+ export function changeText(inputValue){
     return {
-        type: "CHANGE_TEXT",
-        text
+        type: "CHANGE_INPUT",
+        inputValue
     }
 };
 
-export function incrementNumber(number){
-    return {
-        type: "INCREMENT",
-        number
-    }
-};
-export function decrementNumber(number){
-    return {
-        type: "DECREMENT",
-        number
-    }
-};
-export function changeSurname(surName,name){
-    return{
-        type:"Change_Surname",
-        surName,
-        name
-    }
-}
+ 
  
